@@ -24,13 +24,16 @@ export default class SignUpScreen extends Component {
   };
 
   createUser = () => {
-    auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((response) => {
-        console.log(response);
-        let user = response.user;
-      })
-      .catch((err) => console.log(err));
+    try{
+      let response = await auth().createUserWithEmailAndPassword(
+        this.state.email,
+        this.state.password
+        );
+      let { user } = response
+      console.log(user)
+    }catch(err){
+      console.error(err)
+    }
   };
 
   render() {

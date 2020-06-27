@@ -24,14 +24,17 @@ export default class LoginScreen extends Component {
     });
   };
 
-  loginUser = () => {
-    auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((response) => {
-        let user = response.user;
-        console.log(user);
-      })
-      .catch((err) => console.error(err));
+  loginUser = async () => {
+    try {
+      let response = await auth().signInWithEmailAndPassword(
+        this.state.email,
+        this.state.password,
+      );
+      let {user} = response;
+      console.log(user);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   render() {

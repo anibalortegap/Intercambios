@@ -10,14 +10,14 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import SignUp from './components/SignUp';
+import LoginScreen from './screens/LoginScreen';
 
 type Props = {};
 class App extends Component<Props> {
   render() {
     return (
       <View style={styles.sectionContainer}>
-        <SignUp />
+        <LoginScreen />
       </View>
     );
   }

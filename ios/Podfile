@@ -10,6 +10,7 @@ def add_flipper_pods!(versions = {})
   versions['Flipper-RSocket'] ||= '~> 1.0'
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
+
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 
@@ -48,8 +49,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'Intercambios' do
-  # Pods for Intercambios
+target 'IntercambiosApp' do
+  # Pods for IntercambiosApp
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -81,7 +82,8 @@ target 'Intercambios' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'IntercambiosTests' do
+
+  target 'IntercambiosAppTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -98,10 +100,10 @@ target 'Intercambios' do
   end
 end
 
-target 'Intercambios-tvOS' do
-  # Pods for Intercambios-tvOS
+target 'IntercambiosApp-tvOS' do
+  # Pods for IntercambiosApp-tvOS
 
-  target 'Intercambios-tvOSTests' do
+  target 'IntercambiosApp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

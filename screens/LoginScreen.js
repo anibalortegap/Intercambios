@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import AuthenticatorUI from '../components/AuthenticatorUI';
 import auth from '@react-native-firebase/auth';
-export default class SignUpScreen extends Component {
+import AuthenticatorUI from '../components/AuthenticatorUI';
+
+export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -23,14 +24,14 @@ export default class SignUpScreen extends Component {
     });
   };
 
-  createUser = () => {
+  loginUser = () => {
     auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((response) => {
-        console.log(response);
         let user = response.user;
+        console.log(user);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   };
 
   render() {
@@ -38,8 +39,8 @@ export default class SignUpScreen extends Component {
       <AuthenticatorUI
         setEmail={this.setEmail}
         setPassword={this.setPassword}
-        mainButtonTitle="Guardar usuario"
-        mainAction={this.createUser}
+        mainButtonTitle="Ingresar"
+        mainAction={this.loginUser}
       />
     );
   }

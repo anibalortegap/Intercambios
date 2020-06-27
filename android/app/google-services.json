@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "779775818785",
+    "firebase_url": "https://intercambios-1ed42.firebaseio.com",
+    "project_id": "intercambios-1ed42",
+    "storage_bucket": "intercambios-1ed42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779775818785:android:512f1e7303487bde42b760",
+        "android_client_info": {
+          "package_name": "com.anibalortega.intercambios"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779775818785-4sfe8qkpjhrej3lfp2jpcqcaatmk8fk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFJ6MnhnHlIMZsO4Qm5MIkM9zvBy8P9SM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779775818785-4sfe8qkpjhrej3lfp2jpcqcaatmk8fk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

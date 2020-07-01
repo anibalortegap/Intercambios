@@ -8,18 +8,13 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
-
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import LoginScreen from './screens/LoginScreen';
+import Navigator from './Navigator';
 
 type Props = {};
 class App extends Component<Props> {
   render() {
-    return (
-      <View style={styles.sectionContainer}>
-        <LoginScreen />
-      </View>
-    );
+    return <Navigator />;
   }
 }
 

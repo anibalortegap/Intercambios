@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import auth from '@react-native-firebase/auth';
 import AuthenticatorUI from '../components/AuthenticatorUI';
 
-export default class LoginScreen extends Component {
+class LoginScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -43,8 +43,14 @@ export default class LoginScreen extends Component {
         setEmail={this.setEmail}
         setPassword={this.setPassword}
         mainButtonTitle="Ingresar"
+        secondaryButtonTitle="No tengo cuenta"
+        navigationAction={() => {
+          this.props.navigation.navigate('Registrar');
+        }}
         mainAction={this.loginUser}
       />
     );
   }
 }
+
+export default LoginScreen;

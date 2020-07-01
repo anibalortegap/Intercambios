@@ -13,6 +13,10 @@ export default (props) => {
         title={props.mainButtonTitle}
         onPress={() => props.mainAction()}
       />
+      <Button
+        title={props.secondaryButtonTitle}
+        onPress={() => props.navigationAction()}
+      />
     </View>
   );
 };

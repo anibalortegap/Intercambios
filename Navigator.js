@@ -7,17 +7,33 @@ import AuthLoadingScreen from './screens/AuthLoadingScreen';
 
 const AuthNavigator = createStackNavigator(
   {
-    Registrar: SignUpScreen,
-    Ingresar: LoginScreen,
+    SignUp: SignUpScreen,
+    Login: LoginScreen,
   },
   {
-    initialRouteName: 'Ingresar',
+    defaultNavigationOptions: ({navigation}) => {
+      return {
+        header: null,
+      };
+    },
+  },
+  {
+    initialRouteName: 'SignUp',
   },
 );
 
-const AppNavigator = createStackNavigator({
-  Home: HomeScreen,
-});
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+  },
+  {
+    defaultNavigationOptions: ({navigation}) => {
+      return {
+        title: 'Intercambios 🎁',
+      };
+    },
+  },
+);
 
 export default createAppContainer(
   createSwitchNavigator(

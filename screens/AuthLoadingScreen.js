@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import {View, ActivityIndicator} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {withTheme} from 'react-native-paper';
 
 export default class AuthLoadingScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     this.getUser();
     console.log('Loading!!');
@@ -10,7 +14,6 @@ export default class AuthLoadingScreen extends Component {
   getUser() {
     auth().onUserChanged((user) => {
       if (user) {
-        console.log(user);
         this.props.navigation.navigate('App');
       } else {
         this.props.navigation.navigate('Auth');

@@ -29,18 +29,13 @@ let AuthenticatorUI = (props) => {
           alignItems: 'center',
           ...styles.formControl,
         }}>
-        <TouchableHighlight>
-          <Button
-            onPress={() => props.mainAction()}
-            color={props.theme.colors.primary}
-            mode="contained">
+        <TouchableHighlight onPress={() => props.mainAction()}>
+          <Button color={props.theme.colors.primary} mode="contained">
             {props.mainButtonTitle}
           </Button>
         </TouchableHighlight>
-        <TouchableHighlight>
-          <Button onPress={() => props.navigationAction()} mode="contained">
-            {props.secondaryButtonTitle}
-          </Button>
+        <TouchableHighlight onPress={() => props.navigationAction()}>
+          <Button mode="contained">{props.secondaryButtonTitle}</Button>
         </TouchableHighlight>
       </View>
     </View>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import auth from '@react-native-firebase/auth';
+import {connect} from 'react-redux';
 import AuthenticatorUI from '../components/AuthenticatorUI';
 
 class LoginScreen extends Component {
@@ -10,6 +11,10 @@ class LoginScreen extends Component {
       email: '',
       password: '',
     };
+  }
+
+  componentDidMount() {
+    console.log(this.props.user);
   }
 
   setEmail = (email) => {
@@ -45,7 +50,7 @@ class LoginScreen extends Component {
         mainButtonTitle="Ingresar"
         secondaryButtonTitle="No tengo cuenta"
         navigationAction={() => {
-          this.props.navigation.navigate('Registrar');
+          this.props.navigation.navigate('SignUp');
         }}
         mainAction={this.loginUser}
       />
@@ -53,4 +58,12 @@ class LoginScreen extends Component {
   }
 }
 
-export default LoginScreen;
+export default connect(
+  //mapStateToProps
+  (state) => {
+    return {
+      user: state.user,
+    };
+  },
+  //mapDispatchToProps
+)(LoginScreen);

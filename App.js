@@ -10,6 +10,8 @@ import React, {Component} from 'react';
 import AppNavigator from './Navigator';
 
 import {Provider as PaperProvider, DefaultTheme} from 'react-native-paper';
+import {Provider as StateProvider} from 'react-redux';
+import store from './Store';
 
 const appTheme = {
   ...DefaultTheme,
@@ -18,12 +20,15 @@ const appTheme = {
     primary: '#142850',
   },
 };
+
 type Props = {};
 class App extends Component<Props> {
   render() {
     return (
       <PaperProvider theme={appTheme}>
-        <AppNavigator />
+        <StateProvider store={store}>
+          <AppNavigator />
+        </StateProvider>
       </PaperProvider>
     );
   }

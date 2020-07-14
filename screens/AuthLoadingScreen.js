@@ -12,7 +12,7 @@ export default class AuthLoadingScreen extends Component {
   }
   getUser() {
     auth().onUserChanged((user) => {
-      if (user) {
+      if (false) {
         this.props.navigation.navigate('App');
       } else {
         this.props.navigation.navigate('Auth');

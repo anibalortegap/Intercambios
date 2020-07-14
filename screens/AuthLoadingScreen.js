@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, ActivityIndicator} from 'react-native';
 import auth from '@react-native-firebase/auth';
-import {withTheme} from 'react-native-paper';
 
 export default class AuthLoadingScreen extends Component {
   constructor(props) {

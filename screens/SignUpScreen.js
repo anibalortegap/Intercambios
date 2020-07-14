@@ -44,7 +44,7 @@ class SignUpScreen extends Component {
         mainButtonTitle="Guardar usuario"
         secondaryButtonTitle="Ya tengo cuenta"
         navigationAction={() => {
-          this.props.navigation.navigate('Ingresar');
+          this.props.navigation.navigate('Login');
         }}
         mainAction={this.createUser}
       />
